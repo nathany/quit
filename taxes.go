@@ -1,9 +1,5 @@
 package main
 
-import (
-	"math"
-)
-
 // 2024 tax rates for Alberta
 // via https://www.taxtips.ca/taxrates/ab.htm
 // and https://www.taxtips.ca/taxrates/canada.htm
@@ -47,14 +43,4 @@ func GrossIncomeForNet(desiredNet float64) float64 {
 		}
 	}
 	return 0
-}
-
-const epsilon = 1e-9
-
-func inDelta(x, y float64) bool {
-	return math.Abs(x-y) < epsilon
-}
-
-func round(val float64, precision int) float64 {
-	return math.Round(val*(math.Pow10(precision))) / math.Pow10(precision)
 }
