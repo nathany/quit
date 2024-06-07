@@ -21,5 +21,8 @@ func TestMonthlyRate(t *testing.T) {
 func TestMortgagePayment(t *testing.T) {
 	AssertInDelta(t, 2_703.90, MortgagePayment(700_000, 2.34, 30*12, Monthly))
 	AssertInDelta(t, 1_664.03, MortgagePayment(200_000, 5.85, 15*12, Monthly))
-	AssertInDelta(t, 832.01, MortgagePayment(200_000, 5.85, 15*12, Semimonthly))
+
+	// NOTE: Semimonthly payment matches the Royal Bank calculator,
+	// but not the Government of Canada calculator ($831.39, that's strange).
+	AssertInDelta(t, 832.02, MortgagePayment(200_000, 5.85, 15*12, Semimonthly))
 }

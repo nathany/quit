@@ -1,6 +1,14 @@
+/*
+Mortgage calculations for Canadian mortgages.
+
+Helpful resource for these calculations:
+https://www.mikesukmanowsky.com/blog/a-guide-to-canadian-mortgage-calculations
+*/
 package main
 
-import "math"
+import (
+	"math"
+)
 
 type PaymentFrequency int
 
@@ -10,9 +18,6 @@ const (
 	Biweekly    PaymentFrequency = 26
 	Weekly      PaymentFrequency = 52
 )
-
-// Helpful resource for understanding Canadian mortgage calculations:
-// https://www.mikesukmanowsky.com/blog/a-guide-to-canadian-mortgage-calculations
 
 // Calculate effective interest rate or  from the nominal rate.
 // Or Annual Percentage Yield (APY) from the Annual Percentage Rate (APR).
@@ -37,5 +42,5 @@ func periodicRate(effectiveRate float64, periods int) float64 {
 func MortgagePayment(principalAmount, rateAsPercent, amortizationMonths float64, frequency PaymentFrequency) float64 {
 	monthlyRate := monthlyRate(effectiveRate(rateAsPercent / 100))
 	monthlyPayment := monthlyRate * principalAmount / (1 - math.Pow(1+monthlyRate, -amortizationMonths))
-	return round(monthlyPayment*12/float64(frequency), 2)
+	return roundUp(monthlyPayment*12/float64(frequency), 2)
 }
