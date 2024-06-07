@@ -19,10 +19,10 @@ const (
 	Weekly      PaymentFrequency = 52
 )
 
-// Calculate effective interest rate or  from the nominal rate.
+// Calculate effective interest rate from the nominal rate.
 // Or Annual Percentage Yield (APY) from the Annual Percentage Rate (APR).
 // nominalRate should be a decimal value, e.g. 0.0485 for 4.85%
-// source: https://www.aprtoapy.com/
+// Source: https://www.aprtoapy.com/
 func effectiveRate(nominalRate float64) float64 {
 	// Canadian fixed-rate mortgages compound semi-annually (2 periods/year)
 	// So does my variable-rate mortgage, though that isn't always the case.
