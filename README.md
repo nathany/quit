@@ -1,8 +1,8 @@
 # When Can I Quit?
 
-Simple Canadian Financial Calculations written in Go.
+A handful of simple Canadian 🇨🇦 financial calculations written in Go.
 
-Starting with various calculations that could be combined later.
+This is work in progress, starting with various calculations that could be combined later.
 
 * [x] Income tax calculator (Alberta only)
   * [ ] Tax brackets
