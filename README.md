@@ -59,7 +59,7 @@ Please do NOT include personal information, financial or otherwise, in the code 
 
 * [Mortgage Calculator](https://itools-ioutils.fcac-acfc.gc.ca/MC-CH/MCCalc-CHCalc-eng.aspx) by the Government of Canada
 * [Income Tax Calculator](https://www.wealthsimple.com/en-ca/tool/tax-calculator) by Wealthsimple
-* [Compound Interest Calculator](https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/) by Get Smarter About Money
+* [Compound Interest Calculator](https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/) by Get Smarter About Money (Ontario Securities Commission)
 
 ### Blogs
 
