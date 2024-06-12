@@ -51,3 +51,16 @@ It is not financial advice.
 Please open an issue to propose a change or addition before opening a pull request.
 
 Please do NOT include personal information, financial or otherwise, in the code or examples. All numbers should be fictional.
+
+## Resources
+
+### Online Calculators
+
+* [Mortgage Calculator](https://itools-ioutils.fcac-acfc.gc.ca/MC-CH/MCCalc-CHCalc-eng.aspx) by the Government of Canada
+* [Income Tax Calculator](https://www.wealthsimple.com/en-ca/tool/tax-calculator) by Wealthsimple
+* [Compound Interest Calculator](https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/) by Get Smarter About Money
+
+### Blogs
+
+* [A Guide to Canadian Mortgage Calculations (with code)](https://www.mikesukmanowsky.com/blog/a-guide-to-canadian-mortgage-calculations) by Mike Sukmanowsky
+* [The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/) by Peter Adeney aka Mr. Money Mustache
