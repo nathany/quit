@@ -4,7 +4,9 @@ This is an income tax calculator for Alberta, Canada.
 It doesn't currently handle tax brackets, as it's currently intended
 for calculating taxes during retirement and assumes <= $55,867 gross income/year.
 */
-package main
+package taxes
+
+import "github.com/nathany/quit/float"
 
 // 2024 Tax rates for Alberta
 // via https://www.taxtips.ca/taxrates/ab.htm
@@ -22,11 +24,11 @@ const (
 
 // IncomeTax calculates federal and provincial income tax for gross amounts less than $55,867.
 func IncomeTax(income float64) float64 {
-	return round(federalTax(income)+provincialTax(income), 2)
+	return float.Round(federalTax(income)+provincialTax(income), 2)
 }
 
 func federalTax(income float64) float64 {
-	// TODO: implement tax brackets if needed
+	// TODO: implement tax brackets
 	if income <= federalBasicPersonalAmount {
 		return 0
 	}
@@ -34,7 +36,7 @@ func federalTax(income float64) float64 {
 }
 
 func provincialTax(income float64) float64 {
-	// TODO: implement tax brackets if needed
+	// TODO: implement tax brackets
 	if income <= provincialBasicPersonalAmount {
 		return 0
 	}
@@ -46,9 +48,9 @@ func GrossIncomeForNet(desiredNet float64) float64 {
 	// brute force approach scans for the correct net amount
 	for gross := desiredNet; gross <= maxGrossIncome; gross += 0.01 {
 		tax := IncomeTax(gross)
-		net := round(gross-tax, 2)
-		if inDelta(net, desiredNet) {
-			return round(gross, 2)
+		net := float.Round(gross-tax, 2)
+		if float.InDelta(net, desiredNet, float.Epsilon) {
+			return float.Round(gross, 2)
 		}
 	}
 	return 0

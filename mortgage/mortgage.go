@@ -4,10 +4,12 @@ Mortgage calculations for Canadian mortgages.
 Helpful resource for these calculations:
 https://www.mikesukmanowsky.com/blog/a-guide-to-canadian-mortgage-calculations
 */
-package main
+package mortgage
 
 import (
 	"math"
+
+	"github.com/nathany/quit/float"
 )
 
 type PaymentFrequency int
@@ -42,5 +44,5 @@ func periodicRate(effectiveRate float64, periods int) float64 {
 func MortgagePayment(principalAmount, rateAsPercent, amortizationMonths float64, frequency PaymentFrequency) float64 {
 	monthlyRate := monthlyRate(effectiveRate(rateAsPercent / 100))
 	monthlyPayment := monthlyRate * principalAmount / (1 - math.Pow(1+monthlyRate, -amortizationMonths))
-	return roundUp(monthlyPayment*12/float64(frequency), 2)
+	return float.RoundUp(monthlyPayment*12/float64(frequency), 2)
 }

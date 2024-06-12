@@ -1,8 +1,6 @@
-package main
+package taxes
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestIncomeTax(t *testing.T) {
 	result := IncomeTax(44_000)
