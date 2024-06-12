@@ -1,5 +1,10 @@
 /*
 Float package contains helpful functions for working with floating point numbers.
+
+# A Note on Floating Point Numbers
+
+Floating point numbers are a poor choice for financial calculations due to rounding errors.
+However, the calculations in this module are intended for rough estimates rather than precise accounting.
 */
 package float
 
