@@ -12,6 +12,7 @@ import (
 	"github.com/nathany/quit/float"
 )
 
+// PaymentFrequency determines the number of payments per year.
 type PaymentFrequency int
 
 const (
@@ -20,6 +21,17 @@ const (
 	Biweekly    PaymentFrequency = 26
 	Weekly      PaymentFrequency = 52
 )
+
+// MortgagePayment calculates the mortgage payment for the provided parameters.
+//   - principalAmount is the principal remaining on the mortgage
+//   - rateAsPercent is the annual interest rate as a percentage
+//   - amortizationMonths is the number of months remaining on the mortgage
+//   - frequency determines the number of payments per year (see [PaymentFrequency])
+func MortgagePayment(principalAmount, rateAsPercent, amortizationMonths float64, frequency PaymentFrequency) float64 {
+	monthlyRate := monthlyRate(effectiveRate(rateAsPercent / 100))
+	monthlyPayment := monthlyRate * principalAmount / (1 - math.Pow(1+monthlyRate, -amortizationMonths))
+	return float.RoundUp(monthlyPayment*12/float64(frequency), 2)
+}
 
 // Calculate effective interest rate from the nominal rate.
 // Or Annual Percentage Yield (APY) from the Annual Percentage Rate (APR).
@@ -39,10 +51,4 @@ func monthlyRate(effectiveRate float64) float64 {
 // calculate periodic interest rate (e.g semi-monthly is 24 periods)
 func periodicRate(effectiveRate float64, periods int) float64 {
 	return math.Pow(1+effectiveRate, 1.0/float64(periods)) - 1
-}
-
-func MortgagePayment(principalAmount, rateAsPercent, amortizationMonths float64, frequency PaymentFrequency) float64 {
-	monthlyRate := monthlyRate(effectiveRate(rateAsPercent / 100))
-	monthlyPayment := monthlyRate * principalAmount / (1 - math.Pow(1+monthlyRate, -amortizationMonths))
-	return float.RoundUp(monthlyPayment*12/float64(frequency), 2)
 }

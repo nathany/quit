@@ -1,5 +1,5 @@
 /*
-This is an income tax calculator for Alberta, Canada.
+This is an income tax calculator for Alberta, Canada with data for 2024.
 
 It doesn't currently handle tax brackets, as it's currently intended
 for calculating taxes during retirement and assumes <= $55,867 gross income/year.
