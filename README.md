@@ -6,6 +6,7 @@ A library of Canadian 🇨🇦 personal finance calculations written in Go.
 
 This is work in progress.
 
+* [x] assert - Helpful functions for testing
 * [x] float - Helpful functions for working with floating point numbers
 * [x] mortgage - Canadian mortgage calculations
   * [x] `MortgagePayment` calculation
