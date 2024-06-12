@@ -64,4 +64,3 @@ Please do NOT include personal information, financial or otherwise, in the code 
 ### Blogs
 
 * [A Guide to Canadian Mortgage Calculations (with code)](https://www.mikesukmanowsky.com/blog/a-guide-to-canadian-mortgage-calculations) by Mike Sukmanowsky
-* [The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/) by Peter Adeney aka Mr. Money Mustache
